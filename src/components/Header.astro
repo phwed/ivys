@@ -3,27 +3,149 @@ import { Image } from "astro:assets";
 import HeaderUser from "./HeaderUser.tsx";
 ---
 
-<header class="flex flex-row items-center p-4 mx-5 justify-between">
-  <img
-    src="/favicon.svg"
-    alt="Logo"
-    class="w-12 md:w-14"
-  />
-
-  <div class="flex flex-row gap-5 hidden md:flex">
-    <a href="/">Home</a>
-    <a href="/shop">Shop</a>
-    <a href="/about">About</a>
-    <a href="/contact">Contact</a>
-
-    <!-- <HeaderUser client:load /> -->
-  </div>
-
-  <button class="md:hidden">
+<div>
+  <header class="flex flex-row items-center p-4 mx-5 justify-between">
     <img
-      src="https://www.svgrepo.com/show/511066/menu-alt-03.svg"
-      alt="Menu"
-      class="w-10"
+      src="/favicon.svg"
+      alt="Logo"
+      class="w-12 md:w-14"
     />
-  </button>
-</header>
+
+    <div class="flex-row gap-5 hidden md:flex">
+      <a href="/">Home</a>
+      <a href="/shop">Shop</a>
+      <!-- <a href="/about">About</a>
+      <a href="/contact">Contact</a> -->
+
+      <!-- <HeaderUser client:load /> -->
+    </div>
+
+    <button class="md:hidden">
+      <div id="burger-menu">
+        <span></span>
+      </div>
+    </button>
+  </header>
+
+  <div
+    id="menu"
+    class="md:hidden mb-3"
+  >
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/shop">Shop</a></li>
+      <!-- <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li> -->
+    </ul>
+  </div>
+</div>
+
+<style>
+  #burger-menu {
+    cursor: pointer;
+    height: 27px;
+    width: 27px;
+    overflow: visible;
+    position: relative;
+    z-index: 2;
+  }
+  #burger-menu span,
+  #burger-menu span:before,
+  #burger-menu span:after {
+    background: black;
+    display: block;
+    height: 4px;
+    opacity: 1;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+  }
+  #burger-menu span:before,
+  #burger-menu span:after {
+    content: "";
+  }
+  #burger-menu span {
+    right: 0px;
+    top: 13px;
+    width: 27px;
+  }
+  #burger-menu span:before {
+    left: 0px;
+    top: -10px;
+    width: 16px;
+  }
+  #burger-menu span:after {
+    left: 0px;
+    top: 10px;
+    width: 20px;
+  }
+
+  #burger-menu.close span {
+    transform: rotate(-45deg);
+    top: 13px;
+    width: 27px;
+  }
+  #burger-menu.close span:before {
+    top: 0px;
+    transform: rotate(90deg);
+    width: 27px;
+  }
+  #burger-menu.close span:after {
+    top: 0px;
+    left: 0;
+    transform: rotate(90deg);
+    opacity: 0;
+    width: 0;
+  }
+
+  #menu {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+  }
+
+  #menu.overlay {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+    /* hide from medium to large screen */
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  #menu li {
+    list-style: none;
+  }
+  #menu a {
+    display: block;
+    margin-bottom: 5px;
+
+    text-decoration: none;
+  }
+</style>
+
+<script >
+var burgerMenu = document.getElementById("burger-menu");
+var overlay = document.getElementById("menu");
+if (burgerMenu) {
+  burgerMenu.addEventListener("click", function () {
+    this.classList.toggle("close");
+    overlay && overlay.classList.toggle("overlay");
+  });
+}
+
+var menuItem = document.querySelectorAll("#menu a");
+
+menuItem.forEach(function (item) {
+  item.addEventListener("click", function () {
+    // @ts-ignore
+    burgerMenu.classList.toggle("close");
+    overlay && overlay.classList.toggle("overlay");
+  });
+});
+</script>
