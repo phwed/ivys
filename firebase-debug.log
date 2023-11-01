@@ -23,3 +23,48 @@
 [info] i  deploying hosting 
 [debug] [2023-11-01T12:30:23.893Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ivys-ac189/versions [none]
 [debug] [2023-11-01T12:30:23.893Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ivys-ac189/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2023-11-01T12:30:26.929Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ivys-ac189/versions 200
+[debug] [2023-11-01T12:30:26.929Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ivys-ac189/versions {"name":"projects/16587069558/sites/ivys-ac189/versions/84c7a3b09ca65c61","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[ivys-ac189]: beginning deploy... 
+[info] i  hosting[ivys-ac189]: found 17 files in dist 
+[debug] [2023-11-01T12:30:26.937Z] [hosting] uploading with 200 concurrency
+[debug] [2023-11-01T12:30:26.954Z] [hosting] hash cache [ZGlzdA] stored for 17 files
+[debug] [2023-11-01T12:30:26.955Z] [hosting][hash queue][FINAL] {"max":10,"min":5,"avg":5.823529411764706,"active":0,"complete":17,"success":17,"errored":0,"retried":0,"total":17,"elapsed":14}
+[debug] [2023-11-01T12:30:26.955Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/16587069558/sites/ivys-ac189/versions/84c7a3b09ca65c61:populateFiles [none]
+[debug] [2023-11-01T12:30:26.955Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/16587069558/sites/ivys-ac189/versions/84c7a3b09ca65c61:populateFiles {"files":{"/_astro/PlaceOrder.c053a7c4.js":"ba9ffe02d7fb07528125a255cf0935a28b279e98a00a9d2fac7bacf7d53dd004","/favicon.svg":"5819a32c4509707ebd9d38343a0e4c9c80755eea99e1b074d3abade0befdb0be","/_astro/hoisted.4df5127d.js":"65e540c390ffbd1e270e88b44ad1cfd23dfc05320de13a4577951e1045622698","/logo.svg":"140d05f299457b6e86f4a6f9faadfd1153a95d709b2ae107ee00173066a52813","/index.html":"ed7cc16a526ebe0d4c260734ecfd82a833d0f8fac217f4553d71f0887c1ddfe8","/favicon.jpg":"9dbf377718b282efeac70965ab15e3e42d215bb1a4f5de008ed0c1bc8dc8b8eb","/_astro/index.03be2d59.js":"992c33d88ddbdbb41c0c1fc5188c8b9141cb7cd2a2af9ab9457348a0f73954bc","/about/index.html":"6a1b2718168f5e4d022c7c846e47b5ff9e9e1d4c9fbecf62985314d352d5ee3b","/_astro/hoisted.8331c30a.js":"f49272a8fd91eb1582664d1140aee982d965e4cd905cb6a64d1f49667b2206cf","/_astro/about.0c30fcde.css":"419bfe99fee30dd42bfec661e5b092f1a1a7d5c001546254b767bbebfd14705e","/shop/chocolate-pastries/index.html":"3d008284de8854826c8f71bbb811d9295ca4364da03ab4074a6aa1dded5f0873","/shop/chocolate-donut/index.html":"b183e7aeb0ebf849e0e8ff14fd3928ade5e58e20568525fa249593642c0e4c59","/contact/index.html":"938577b39350475772082ab32825cd6cae878599b877227809c6ca491bc8f3c9","/shop/fruit-tart/index.html":"42e6d3f98dc1112d71dc70fa84db1d4028cd4c62491bb6779d77a01fb93a76bb","/shop/index.html":"05787bad4ebdb6b37edd5a72e680692202e997636d44997bb7c9d8dea05c860b","/stars.png":"9c6da7626c6d1fc0681d2beaa1f2d439cbca38e4567fed13fc05cb241bece201","/_astro/client.4ae814ea.js":"c1f38439f7f82b7dd38ad5225935a70756d63f83bbc72ce7186c0eaa015817d1"}}
+[debug] [2023-11-01T12:30:29.921Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/16587069558/sites/ivys-ac189/versions/84c7a3b09ca65c61:populateFiles 200
+[debug] [2023-11-01T12:30:29.921Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/16587069558/sites/ivys-ac189/versions/84c7a3b09ca65c61:populateFiles {"uploadRequiredHashes":["ba9ffe02d7fb07528125a255cf0935a28b279e98a00a9d2fac7bacf7d53dd004","42e6d3f98dc1112d71dc70fa84db1d4028cd4c62491bb6779d77a01fb93a76bb","b183e7aeb0ebf849e0e8ff14fd3928ade5e58e20568525fa249593642c0e4c59","3d008284de8854826c8f71bbb811d9295ca4364da03ab4074a6aa1dded5f0873"],"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/ivys-ac189/versions/84c7a3b09ca65c61/files"}
+[debug] [2023-11-01T12:30:29.922Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/ivys-ac189/versions/84c7a3b09ca65c61/files/ba9ffe02d7fb07528125a255cf0935a28b279e98a00a9d2fac7bacf7d53dd004 [none]
+[debug] [2023-11-01T12:30:29.922Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ivys-ac189/versions/84c7a3b09ca65c61/files/ba9ffe02d7fb07528125a255cf0935a28b279e98a00a9d2fac7bacf7d53dd004 [stream]
+[debug] [2023-11-01T12:30:29.923Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/ivys-ac189/versions/84c7a3b09ca65c61/files/42e6d3f98dc1112d71dc70fa84db1d4028cd4c62491bb6779d77a01fb93a76bb [none]
+[debug] [2023-11-01T12:30:29.923Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ivys-ac189/versions/84c7a3b09ca65c61/files/42e6d3f98dc1112d71dc70fa84db1d4028cd4c62491bb6779d77a01fb93a76bb [stream]
+[debug] [2023-11-01T12:30:29.924Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/ivys-ac189/versions/84c7a3b09ca65c61/files/b183e7aeb0ebf849e0e8ff14fd3928ade5e58e20568525fa249593642c0e4c59 [none]
+[debug] [2023-11-01T12:30:29.924Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ivys-ac189/versions/84c7a3b09ca65c61/files/b183e7aeb0ebf849e0e8ff14fd3928ade5e58e20568525fa249593642c0e4c59 [stream]
+[debug] [2023-11-01T12:30:29.924Z] >>> [apiv2][query] POST https://upload-firebasehosting.googleapis.com/upload/sites/ivys-ac189/versions/84c7a3b09ca65c61/files/3d008284de8854826c8f71bbb811d9295ca4364da03ab4074a6aa1dded5f0873 [none]
+[debug] [2023-11-01T12:30:29.924Z] >>> [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ivys-ac189/versions/84c7a3b09ca65c61/files/3d008284de8854826c8f71bbb811d9295ca4364da03ab4074a6aa1dded5f0873 [stream]
+[debug] [2023-11-01T12:30:29.925Z] [hosting][populate queue][FINAL] {"max":2969,"min":2969,"avg":2969,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":2972}
+[debug] [2023-11-01T12:30:29.925Z] [hosting] uploads queued: 4
+[debug] [2023-11-01T12:30:31.088Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/ivys-ac189/versions/84c7a3b09ca65c61/files/b183e7aeb0ebf849e0e8ff14fd3928ade5e58e20568525fa249593642c0e4c59 200
+[debug] [2023-11-01T12:30:31.088Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ivys-ac189/versions/84c7a3b09ca65c61/files/b183e7aeb0ebf849e0e8ff14fd3928ade5e58e20568525fa249593642c0e4c59 [stream]
+[debug] [2023-11-01T12:30:31.216Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/ivys-ac189/versions/84c7a3b09ca65c61/files/42e6d3f98dc1112d71dc70fa84db1d4028cd4c62491bb6779d77a01fb93a76bb 200
+[debug] [2023-11-01T12:30:31.216Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ivys-ac189/versions/84c7a3b09ca65c61/files/42e6d3f98dc1112d71dc70fa84db1d4028cd4c62491bb6779d77a01fb93a76bb [stream]
+[debug] [2023-11-01T12:30:31.277Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/ivys-ac189/versions/84c7a3b09ca65c61/files/ba9ffe02d7fb07528125a255cf0935a28b279e98a00a9d2fac7bacf7d53dd004 200
+[debug] [2023-11-01T12:30:31.277Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ivys-ac189/versions/84c7a3b09ca65c61/files/ba9ffe02d7fb07528125a255cf0935a28b279e98a00a9d2fac7bacf7d53dd004 [stream]
+[debug] [2023-11-01T12:30:31.390Z] <<< [apiv2][status] POST https://upload-firebasehosting.googleapis.com/upload/sites/ivys-ac189/versions/84c7a3b09ca65c61/files/3d008284de8854826c8f71bbb811d9295ca4364da03ab4074a6aa1dded5f0873 200
+[debug] [2023-11-01T12:30:31.390Z] <<< [apiv2][body] POST https://upload-firebasehosting.googleapis.com/upload/sites/ivys-ac189/versions/84c7a3b09ca65c61/files/3d008284de8854826c8f71bbb811d9295ca4364da03ab4074a6aa1dded5f0873 [stream]
+[debug] [2023-11-01T12:30:31.390Z] [hosting][upload queue][FINAL] {"max":1468,"min":1166,"avg":1321.25,"active":0,"complete":4,"success":4,"errored":0,"retried":0,"total":4,"elapsed":1469}
+[info] ✔  hosting[ivys-ac189]: file upload complete 
+[debug] [2023-11-01T12:30:31.390Z] [hosting] deploy completed after 4459ms
+[debug] [2023-11-01T12:30:31.390Z] [
+  {
+    "config": {
+      "public": "dist",
+      "ignore": [],
+      "site": "ivys-ac189"
+    },
+    "version": "projects/16587069558/sites/ivys-ac189/versions/84c7a3b09ca65c61"
+  }
+]
+[info] i  hosting[ivys-ac189]: finalizing version... 
+[debug] [2023-11-01T12:30:31.391Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ivys-ac189/versions/84c7a3b09ca65c61 updateMask=status%2Cconfig
+[debug] [2023-11-01T12:30:31.391Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ivys-ac189/versions/84c7a3b09ca65c61 {"status":"FINALIZED","config":{}}
