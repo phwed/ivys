@@ -1,0 +1,25 @@
+[debug] [2023-11-01T12:30:20.538Z] ----------------------------------------------------------------------
+[debug] [2023-11-01T12:30:20.539Z] Command:       /opt/homebrew/.nvm/versions/node/v18.18.1/bin/node /opt/homebrew/.nvm/versions/node/v18.18.1/bin/firebase deploy --only hosting,
+[debug] [2023-11-01T12:30:20.540Z] CLI Version:   12.7.0
+[debug] [2023-11-01T12:30:20.540Z] Platform:      darwin
+[debug] [2023-11-01T12:30:20.540Z] Node Version:  v18.18.1
+[debug] [2023-11-01T12:30:20.544Z] Time:          Wed Nov 01 2023 12:30:20 GMT+0000 (Greenwich Mean Time)
+[debug] [2023-11-01T12:30:20.544Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-01T12:30:20.583Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-01T12:30:20.583Z] > authorizing via signed-in user (cececservices@gmail.com)
+[debug] [2023-11-01T12:30:20.583Z] [iam] checking project ivys-ac189 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-11-01T12:30:20.584Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ivys-ac189:testIamPermissions [none]
+[debug] [2023-11-01T12:30:20.584Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ivys-ac189:testIamPermissions x-goog-quota-user=projects/ivys-ac189
+[debug] [2023-11-01T12:30:20.584Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ivys-ac189:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-11-01T12:30:22.573Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ivys-ac189:testIamPermissions 200
+[debug] [2023-11-01T12:30:22.573Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ivys-ac189:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-11-01T12:30:22.574Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ivys-ac189 [none]
+[debug] [2023-11-01T12:30:23.887Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ivys-ac189 200
+[debug] [2023-11-01T12:30:23.887Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ivys-ac189 {"projectId":"ivys-ac189","projectNumber":"16587069558","displayName":"ivys","name":"projects/ivys-ac189","resources":{"hostingSite":"ivys-ac189"},"state":"ACTIVE","etag":"1_eb0d0f5e-433a-4e8b-a233-a10a89d0b50b"}
+[info] 
+[info] === Deploying to 'ivys-ac189'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2023-11-01T12:30:23.893Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ivys-ac189/versions [none]
+[debug] [2023-11-01T12:30:23.893Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/ivys-ac189/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
