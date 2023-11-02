@@ -28,14 +28,17 @@ const image = "https:" + data.fields.image.fields.file.url;
 const description = data.fields.description;
 const title = data.fields.product;
 const price = data.fields.price;
-
 ---
 
 <Layout title="Order From Ivy's Pastries.">
-  <div class="mx-auto w-full flex flex-row justify-center pb-10">
+  <div
+    transition:animate="slide"
+    class="mx-auto w-full flex flex-row justify-center pb-10"
+  >
     <div class="w-11/12 md:w-8/12 p-5 flex gap-5 flex-col lg:flex-row">
       <div class="bg-neutral-200 w-auto">
         <img
+          class="w-[614px] h-[400px] md:h-[614px] object-cover"
           src={image}
         />
       </div>
@@ -51,14 +54,16 @@ const price = data.fields.price;
         {/* description */}
         <div>
           <article
-          class="md:w-[50ch] font-light leading-5"
-          set:html={// @ts-ignore
-          documentToHtmlString(description)}
-        />
-    
+            class="md:w-[50ch] font-light leading-5"
+            set:html={// @ts-ignore
+            documentToHtmlString(description)}
+          />
         </div>
 
-        <PlaceOrder client:load data={data} />
+        <PlaceOrder
+          client:load
+          data={data}
+        />
 
         <div class="mt-5">
           <span class="text-pink-500">

@@ -1,5 +1,4 @@
 ---
-import Slider from "@/components/React/Slider.tsx";
 import "keen-slider/keen-slider.min.css";
 import { content } from "@/constants/content.ts";
 import { contentfulClient } from "../../lib/contentful";
@@ -14,7 +13,6 @@ const testimonials = entries.items;
 
 const data = Array.isArray(testimonials)
   ? testimonials.map((item: any) => {
-      console.log(item.fields);
       const comment = item.fields.comment;
       const name = item.fields.image.fields.title;
       const position = item.fields.image.fields.description;
@@ -27,8 +25,6 @@ const data = Array.isArray(testimonials)
       };
     })
   : [];
-
-  // console.log(testimonials)
 ---
 
 <section class="flex flex-col gap-5 md:gap-5 p-5 lg:px-10 py-20">
@@ -80,46 +76,47 @@ const data = Array.isArray(testimonials)
 
 <script>
   import KeenSlider from "keen-slider";
-
-  const slider = new KeenSlider(
-    "#carousel",
-    {
-      loop: true,
-      renderMode: "performance",
-      drag: true,
-      defaultAnimation: {
-        duration: 2000
-      }
-    },
-    [
-      (slider) => {
-        let timeout: number | undefined;
-        let mouseOver = false;
-        function clearNextTimeout() {
-          clearTimeout(timeout);
+  document.addEventListener("astro:page-load", () => {
+    const slider = new KeenSlider(
+      "#carousel",
+      {
+        loop: true,
+        renderMode: "performance",
+        drag: true,
+        defaultAnimation: {
+          duration: 2000
         }
-        function nextTimeout() {
-          clearTimeout(timeout);
-          if (mouseOver) return;
-          timeout = setTimeout(() => {
-            slider.next();
-          }, 4000);
-        }
-        slider.on("created", () => {
-          slider.container.addEventListener("mouseover", () => {
-            mouseOver = true;
-            clearNextTimeout();
-          });
-          slider.container.addEventListener("mouseout", () => {
-            mouseOver = false;
+      },
+      [
+        (slider) => {
+          let timeout: number | undefined;
+          let mouseOver = false;
+          function clearNextTimeout() {
+            clearTimeout(timeout);
+          }
+          function nextTimeout() {
+            clearTimeout(timeout);
+            if (mouseOver) return;
+            timeout = setTimeout(() => {
+              slider.next();
+            }, 4000);
+          }
+          slider.on("created", () => {
+            slider.container.addEventListener("mouseover", () => {
+              mouseOver = true;
+              clearNextTimeout();
+            });
+            slider.container.addEventListener("mouseout", () => {
+              mouseOver = false;
+              nextTimeout();
+            });
             nextTimeout();
           });
-          nextTimeout();
-        });
-        slider.on("dragStarted", clearNextTimeout);
-        slider.on("animationEnded", nextTimeout);
-        slider.on("updated", nextTimeout);
-      }
-    ]
-  );
+          slider.on("dragStarted", clearNextTimeout);
+          slider.on("animationEnded", nextTimeout);
+          slider.on("updated", nextTimeout);
+        }
+      ]
+    );
+  });
 </script>

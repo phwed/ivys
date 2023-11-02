@@ -129,23 +129,25 @@ import HeaderUser from "./HeaderUser.tsx";
   }
 </style>
 
-<script >
-var burgerMenu = document.getElementById("burger-menu");
-var overlay = document.getElementById("menu");
-if (burgerMenu) {
-  burgerMenu.addEventListener("click", function () {
-    this.classList.toggle("close");
-    overlay && overlay.classList.toggle("overlay");
-  });
-}
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    var burgerMenu = document.getElementById("burger-menu");
+    var overlay = document.getElementById("menu");
+    if (burgerMenu) {
+      burgerMenu.addEventListener("click", function () {
+        this.classList.toggle("close");
+        overlay && overlay.classList.toggle("overlay");
+      });
+    }
 
-var menuItem = document.querySelectorAll("#menu a");
+    var menuItem = document.querySelectorAll("#menu a");
 
-menuItem.forEach(function (item) {
-  item.addEventListener("click", function () {
-    // @ts-ignore
-    burgerMenu.classList.toggle("close");
-    overlay && overlay.classList.toggle("overlay");
+    menuItem.forEach(function (item) {
+      item.addEventListener("click", function () {
+        // @ts-ignore
+        burgerMenu.classList.toggle("close");
+        overlay && overlay.classList.toggle("overlay");
+      });
+    });
   });
-});
 </script>
