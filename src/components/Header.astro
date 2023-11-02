@@ -3,21 +3,21 @@ import { Image } from "astro:assets";
 import HeaderUser from "./HeaderUser.tsx";
 ---
 
-<div transition:persist>
+<div>
   <header class="flex flex-row items-center p-4 mx-5 justify-between">
     <img
+      transition:persist
       src="/favicon.svg"
       alt="Logo"
       class="w-12 md:w-14"
     />
 
-    <div class="flex-row gap-5 hidden md:flex">
+    <div
+      transition:persist
+      class="flex-row gap-5 hidden md:flex"
+    >
       <a href="/">Home</a>
       <a href="/shop">Shop</a>
-      <!-- <a href="/about">About</a>
-      <a href="/contact">Contact</a> -->
-
-      <!-- <HeaderUser client:load /> -->
     </div>
 
     <button class="md:hidden">
@@ -129,7 +129,7 @@ import HeaderUser from "./HeaderUser.tsx";
   }
 </style>
 
-<script is:inline>
+<script>
   document.addEventListener("astro:page-load", () => {
     var burgerMenu = document.getElementById("burger-menu");
     var overlay = document.getElementById("menu");
