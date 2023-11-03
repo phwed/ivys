@@ -16,6 +16,7 @@
     "@nanostores/react": "^0.7.1",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "@vercel/analytics": "^1.1.1",
     "astro": "^3.3.0",
     "contentful": "^10.6.5",
     "keen-slider": "^6.8.6",
